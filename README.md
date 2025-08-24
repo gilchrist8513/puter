@@ -1,3 +1,51 @@
+# AdForge
+
+AdForge is a Next.js + React app to scout trending drop-shipping/affiliate products, generate AI-powered ad copy, and track performance funnels.
+
+## Features
+- Dashboard: top trending products with margin %, heat score, and "Make Ads" button
+- Scout Page: list of mock products for research and selection
+- Ad Generator API: accepts product ID and style, calls OpenAI API, returns 3 ad variants
+- Reusable Components: NavBar, ProductCard, Section wrapper
+- Lib: `lib/products.ts` (mock DB + helpers), `lib/openai.ts` (OpenAI client setup)
+- Tailwind CSS for styling
+
+## Quickstart (Cursor Web IDE)
+1. Install deps
+   ```bash
+   npm install
+   ```
+2. Add environment
+   - Duplicate `.env.local.example` as `.env.local`
+   - Set `OPENAI_API_KEY="sk-..."`
+3. Dev server
+   ```bash
+   npm run dev
+   ```
+4. Visit `http://localhost:3000`
+
+> Note: If no `OPENAI_API_KEY` is provided, the Ad Generator API falls back to mock ads so you can demo without a key.
+
+## API Testing
+POST `/api/generate-ads`
+```json
+{
+  "productId": "p1",
+  "style": "Direct Response"
+}
+```
+
+Response
+```json
+{
+  "variants": [
+    { "headline": "...", "body": "..." },
+    { "headline": "...", "body": "..." },
+    { "headline": "...", "body": "..." }
+  ]
+}
+```
+
 <h3 align="center"><img width="80" alt="Puter.com, The Personal Cloud Computer: All your files, apps, and games in one place accessible from anywhere at any time." src="https://assets.puter.site/puter-logo.png"></h3>
 
 <h3 align="center">The Internet OS! Free, Open-Source, and Self-Hostable.</h3>

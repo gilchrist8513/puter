@@ -1,67 +1,26 @@
 {
-  "name": "puter.com",
-  "version": "2.5.1",
-  "author": "Puter Technologies Inc.",
-  "license": "AGPL-3.0-only",
-  "description": "Desktop environment in the browser!",
-  "homepage": "https://puter.com",
-  "type": "module",
-  "main": "exports.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.1.1",
-    "chalk": "^4.1.0",
-    "clean-css": "^5.3.2",
-    "dotenv": "^16.4.5",
-    "eslint": "^9.1.1",
-    "express": "^4.18.2",
-    "globals": "^15.0.0",
-    "html-entities": "^2.3.3",
-    "html-webpack-plugin": "^5.6.0",
-    "license-check-and-add": "^4.0.5",
-    "mocha": "^10.6.0",
-    "nodemon": "^3.1.0",
-    "uglify-js": "^3.17.4",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.1"
-  },
+  "name": "adforge",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "npx mocha src/phoenix/test && npx vitest run src/backend && node src/backend/tools/test",
-    "start=gui": "nodemon --exec \"node dev-server.js\" ",
-    "start": "node ./tools/run-selfhosted.js",
-    "build": "cd src/gui; node ./build.js",
-    "check-translations": "node tools/check-translations.js"
-  },
-  "workspaces": [
-    "src/*",
-    "tools/*",
-    "experiments/js-parse-and-output"
-  ],
-  "nodemonConfig": {
-    "ext": "js, json, mjs, jsx, svg, css",
-    "ignore": [
-      "./dist/",
-      "./node_modules/"
-    ]
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@heyputer/putility": "^1.0.2",
-    "@paralleldrive/cuid2": "^2.2.2",
-    "dedent": "^1.5.3",
-    "ioredis": "^5.6.0",
-    "javascript-time-ago": "^2.5.11",
-    "json-colorizer": "^3.0.1",
-    "open": "^10.1.0",
-    "parse-domain": "^8.2.2",
-    "simple-git": "^3.25.0",
-    "string-template": "^1.0.0",
-    "uuid": "^9.0.1"
+    "next": "14.2.5",
+    "openai": "^4.56.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
-  "optionalDependencies": {
-    "sharp": "^0.34.3",
-    "sharp-bmp": "^0.1.5",
-    "sharp-ico": "^0.1.5"
+  "devDependencies": {
+    "@types/react": "19.1.11",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.6.2"
   }
 }
